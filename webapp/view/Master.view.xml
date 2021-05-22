@@ -1,0 +1,62 @@
+<mvc:View controllerName="renova.egitim2.controller.Master" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Table id="idBookTable" inset="false" items="{BookModel>/}" mode="SingleSelectMaster" selectionChange="onSelectBook">
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>books}" level="H2"/>
+										<ToolbarSpacer/>
+										<SearchField id="searchBook" search="onSearchBook" width="auto"/>
+										<Button icon="sap-icon://add" press="onAddBook"/>
+									</content>
+								</OverflowToolbar>
+							</headerToolbar>
+							<!--<infoToolbar>-->
+							<!--	<OverflowToolbar>-->
+							<!--		<Label text="Wide range of available products"/>-->
+							<!--	</OverflowToolbar>-->
+							<!--</infoToolbar>-->
+							<columns>
+								<Column width="3em"></Column>
+								<Column width="12em"></Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="BookName"/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="true">
+									<Text text="Writer"/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="true">
+									<Text text="TurkishTranslation"/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="true">
+									<Text text="ReleaseDate"/>
+								</Column>
+								<Column hAlign="End"></Column>
+							</columns>
+							<items>
+								<ColumnListItem >
+									<cells>
+										<Text text="{BookModel>BookNo}"/>
+										<Image src="{BookModel>PictureUrl}" width="10rem" height="16rem"/>
+										<Text text="{BookModel>BookName}"/>
+										<Text text="{BookModel>Writer}"/>
+										<ObjectStatus text="{ path: 'BookModel>TurkishTranslation', formatter: '.formatter.turkishTranslationText' }"/>
+										<DatePicker dateValue="{BookModel>ReleaseDate}" editable="false"/>
+										<VBox>
+											<Button icon="sap-icon://edit" press="onEditBook"/>
+											<Button icon="sap-icon://delete" press="onDeleteBook"/>
+										</VBox>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
