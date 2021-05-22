@@ -7,7 +7,7 @@ sap.ui.define([
 	"sap/m/MessageToast",
 	"../model/formatter"
 ], function (Controller, JSONModel, Filter, FilterOperator, MessageBox, MessageToast, formatter) {
-	"use strict";
+	"use strict"; 
 
 	return Controller.extend("renova.egitim2.controller.Master", {
 		formatter: formatter,
@@ -19,7 +19,7 @@ sap.ui.define([
 				Summary: 'Summarry 1',
 				TurkishTranslation: true,
 				ReleaseDate: new Date("01.01.1985"),
-				PictureUrl: "https://i.dr.com.tr/cache/600x600-0/originals/0000000402142-1.jpg"
+				PictureUrl: ""
 			}, {
 				BookNo: 2,
 				BookName: "Şeker Portakalı",
