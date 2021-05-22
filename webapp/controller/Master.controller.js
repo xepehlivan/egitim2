@@ -106,7 +106,7 @@ sap.ui.define([
 			//filter binding
 			var oBookTable = this.getView().byId("idBookTable");
 			var oBindingItems = oBookTable.getBinding("items");
-			oBindingItems.filter(aFilter);
+			oBindingItems.filter(aFilter); 
 		},
 		onSelectBook: function (oEvent) {
 			var oJsonModel = new JSONModel(oEvent.getSource().getSelectedItem().getBindingContext("BookModel").getProperty());
